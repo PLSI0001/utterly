@@ -1,0 +1,99 @@
+#utterly-indicator {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999999;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: -apple-system, system-ui, sans-serif;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#utterly-indicator .utterly-pulse {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #EF4444;
+}
+
+#utterly-indicator.recording .utterly-pulse {
+    animation: utterly-pulse-anim 1.5s infinite;
+}
+
+#utterly-indicator.processing .utterly-pulse {
+    background: #F59E0B;
+    animation: utterly-spin-anim 1s linear infinite;
+}
+
+#utterly-indicator .utterly-time {
+    font-weight: 600;
+    font-size: 14px;
+    color: #0F172A;
+    font-variant-numeric: tabular-nums;
+}
+
+#utterly-indicator .utterly-text {
+    font-size: 14px;
+    color: #64748B;
+    font-weight: 500;
+}
+
+@keyframes utterly-pulse-anim {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes utterly-spin-anim {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#utterly-undo {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 999999;
+    background: #0F172A;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: -apple-system, system-ui, sans-serif;
+    font-size: 14px;
+}
+
+#utterly-undo-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+#utterly-undo-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
